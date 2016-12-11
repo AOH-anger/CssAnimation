@@ -3,8 +3,65 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>循环移动</title>
+		<link rel="stylesheet" type="text/css" href="css/loopRoll.css"/>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var $roll = $('.roll ul');
+				$roll.html($roll.html()+$roll.html());
+				var nowleft = 0;
+				var value = 2;
+				var timer = setInterval(move,50);
+				
+				//控制鼠标的动作
+				$roll.mouseover(function(event){
+					clearInterval(timer);
+				});
+				
+				$roll.mouseout(function(event){
+					timer = setInterval(move,50);
+				});
+				
+				$('.btn_left').click(function(){
+					value = -2
+				});
+				
+				$('.btn_right').click(function(){
+					value = 2
+				});
+	
+				function move(){
+					
+					nowleft -= value;
+					
+					if(nowleft < -500){
+						nowleft = 0;
+					}
+					
+					if(nowleft > 0){
+						nowleft = -500;
+					}
+					
+					$roll.css({left:nowleft});
+				}
+			});
+		</script>
 	</head>
 	<body>
 		
+		<div class="btn">
+			<input class="btn_left" type="button" value="向左"/>
+			<input class="btn_right" type="button" value="向右"/>
+		</div>
+		
+		<div class="roll">
+			<ul>
+				<li><a href="https://www.google.com/search?q=%E5%B9%BD%E9%BB%98%E5%9B%BE%E7%89%87&tbm=isch&tbo=u&source=univ&sa=X&ved=0ahUKEwju97TI4uvQAhVrrFQKHf5nDTsQsAQIGw&biw=1280&bih=590"><img src="img/img1.jpg" alt="图片"></a></li>
+				<li><a href="https://www.google.com/search?q=%E5%B9%BD%E9%BB%98%E5%9B%BE%E7%89%87&tbm=isch&tbo=u&source=univ&sa=X&ved=0ahUKEwju97TI4uvQAhVrrFQKHf5nDTsQsAQIGw&biw=1280&bih=590"><img src="img/img2.jpg" alt="图片"></a></li>
+				<li><a href="https://www.google.com/search?q=%E5%B9%BD%E9%BB%98%E5%9B%BE%E7%89%87&tbm=isch&tbo=u&source=univ&sa=X&ved=0ahUKEwju97TI4uvQAhVrrFQKHf5nDTsQsAQIGw&biw=1280&bih=590"><img src="img/img3.jpg" alt="图片"></a></li>
+				<li><a href="https://www.google.com/search?q=%E5%B9%BD%E9%BB%98%E5%9B%BE%E7%89%87&tbm=isch&tbo=u&source=univ&sa=X&ved=0ahUKEwju97TI4uvQAhVrrFQKHf5nDTsQsAQIGw&biw=1280&bih=590"><img src="img/img4.jpg" alt="图片"></a></li>
+				<li><a href="https://www.google.com/search?q=%E5%B9%BD%E9%BB%98%E5%9B%BE%E7%89%87&tbm=isch&tbo=u&source=univ&sa=X&ved=0ahUKEwju97TI4uvQAhVrrFQKHf5nDTsQsAQIGw&biw=1280&bih=590"><img src="img/img5.jpg" alt="图片"></a></li>
+			</ul>
+		</div>
 	</body>
 </html>
