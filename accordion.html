@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>手风琴画册</title>
+		<link rel="stylesheet" type="text/css" href="css/accordion.css"/>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.content li').click(function(){
+					//按正常顺序点击
+					$(this).animate({left:$(this).index()*21});
+					//不按顺序点击,则让其他的元素依次的移动
+					$(this).prevAll().each(function(){
+						$(this).animate({left:$(this).index()*21});
+					});
+					
+					$(this).nextAll().each(function(){
+						$(this).animate({left:727-(5-$(this).index())*21});
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="content">
+			<ul>
+				<li class="bar01"><span>贡嘎雪山</span><img src="img/1.jpg" alt="图片"></li>
+				<li class="bar02"><span>我的勇士</span><img src="img/2.jpg" alt="图片"></li>
+				<li class="bar03"><span>路边野餐</span><img src="img/3.jpg" alt="图片"></li>
+				<li class="bar04"><span>中点之前</span><img src="img/5.jpg" alt="图片"></li>
+				<li class="bar05"><span>装备修整</span><img src="img/6.jpg" alt="图片"></li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+*{margin: 0px; padding: 0px;}
+.box{
+	width: 600px;
+	height: 200px;
+	margin: 100px auto;
+	border: 1px solid #8E8E8E;
+	border-radius: 10px;
+}
+.box div{
+	margin: 20px auto;
+	width: 60px;
+	height: 100px;
+	list-style: none;
+	margin-left: 13px;
+	float: left;
+	border-radius: 5px;
+}
+.box p{
+	float: left;
+	width: 100%;
+	font-family: "微软雅黑";
+	font-size: 20px;
+	color: #8E8E8E;
+	text-align: center;
+}
+
+.box div:nth-child(1){
+	background-color: #FBFDE6;
+	animation: anim 1s ease 100ms  infinite Alternate ;
+}
+.box div:nth-child(2){
+	background-color: #C8F8B0;
+	animation: anim 1s ease 200ms  infinite Alternate ;
+}
+.box div:nth-child(3){
+	background-color: #88EFBE;
+	animation: anim 1s ease 400ms  infinite Alternate ;
+}
+.box div:nth-child(4){
+	background-color: #FFE6BF;
+	animation: anim 1s ease 600ms  infinite Alternate ;
+}
+.box div:nth-child(5){
+	background-color: #E0F9D6;
+	animation: anim 1s ease 800ms  infinite Alternate ;
+}
+.box div:nth-child(6){
+	background-color: #12D6E9;
+	animation: anim 1s ease 1000ms  infinite Alternate ;
+}
+.box div:nth-child(7){
+	background-color: #12D6E9;
+	animation: anim 1s ease 1200ms  infinite Alternate ;
+}
+.box div:nth-child(8){
+	background-color: #87F6F5;
+	animation: anim 1s ease 1400ms  infinite Alternate ;
+}
+
+@keyframes  anim{
+	from{
+		transform: scaleY(1);
+	}
+	to{
+		transform: scaleY(0.5);
+	}
+}
+
