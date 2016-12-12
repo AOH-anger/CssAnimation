@@ -12,3 +12,6 @@
 
 ### loopRoll.html --- 循环滑动效果
 ![](img/loopRoll.gif)
+
+### glideStrip.html --- 滑动条且数值变化效果
+![](img/glideStripShow.gif)
