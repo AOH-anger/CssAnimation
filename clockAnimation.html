@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>时钟动画</title>
+		<script src="js/jquery-1.12.4.min.js"></script>
+		<script>
+			//设置秒针
+			setInterval(function(){
+				var secs = new Date().getSeconds();
+				var sedgree = secs * 6;
+				var value = "rotate("+sedgree+"deg)";
+				$('.sec').css({"-moz-transform" : value, "-webkit-transform" : value});
+			},1000);
+			
+			//设置分针
+			setInterval(function(){
+				var mins = new Date().getMinutes();
+				var minute = mins * 6;
+				var value = "rotate("+minute+"deg)";
+				$('.min').css({"-moz-transform" : value, "-webkit-transform" : value});
+			},1000);
+			
+			//设置时针
+			setInterval(function(){
+				var hour = new Date().getHours();
+				var minu = new Date().getMinutes();
+				var hours = hour * 30 + (minu / 2);	
+				var value = "rotate("+hours+"deg)";
+				$('.hour').css({"-moz-transform" : value, "-webkit-transform" : value});
+			},1000);
+			
+		</script>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.clock{
+				width: 600px;
+				height: 600px;
+				position: relative;
+				list-style: none;
+				margin: 50px auto;
+				background:url(img/clockface.jpg);
+			}
+			/*这里要加分号*/
+			.sec, .min, .hour{   
+				position: absolute;
+				width: 30px;
+				height: 600px;
+				top: 0px;
+				left: 285px;
+			}
+			.sec{			
+				background:url(img/sechand.png);
+				z-index: 3;
+			}
+			.min{	
+				background:url(img/minhand.png);
+				z-index: 2;
+			}
+			.hour{			
+				background:url(img/hourhand.png);
+				z-index: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="clock">
+			<li class="sec"></li>
+			<li class="min"></li>
+			<li class="hour"></li>
+		</ul>
+	</body>
+</html>

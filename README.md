@@ -15,3 +15,6 @@
 
 ### glideStrip.html --- 滑动条且数值变化效果
 ![](img/glideStripShow.gif)
+
+### clockAnimation.html --- 时钟效果
+![](img/clockAnimation.gif)
